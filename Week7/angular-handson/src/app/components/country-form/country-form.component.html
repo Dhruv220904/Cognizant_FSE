@@ -1,0 +1,19 @@
+<h2>Add a Country</h2>
+
+<form [formGroup]="countryForm" (ngSubmit)="onSubmit()">
+  <div>
+    <label>Code:
+      <input formControlName="code" placeholder="e.g. IN">
+    </label>
+    <div *ngIf="submitted && code?.invalid" style="color:#b91c1c">Code is required (max 3 chars).</div>
+  </div>
+
+  <div style="margin-top: 0.5rem;">
+    <label>Name:
+      <input formControlName="name" placeholder="e.g. India">
+    </label>
+    <div *ngIf="submitted && name?.invalid" style="color:#b91c1c">Name is required.</div>
+  </div>
+
+  <button type="submit" style="margin-top: 1rem;">Save</button>
+</form>

@@ -1,0 +1,21 @@
+<h2>Countries</h2>
+
+<p *ngIf="loading">Loading countries...</p>
+<p *ngIf="errorMessage" style="color:#b91c1c">{{ errorMessage }}</p>
+
+<table *ngIf="!loading">
+  <thead>
+    <tr>
+      <th>Code</th>
+      <th>Name</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let country of countries">
+      <td>{{ country.code | uppercase }}</td>
+      <td>{{ country.name }}</td>
+    </tr>
+  </tbody>
+</table>
+
+<p><a routerLink="/countries/add">+ Add a country</a></p>
